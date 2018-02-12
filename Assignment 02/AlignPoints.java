@@ -1,29 +1,29 @@
 import java.util.Scanner;
 
 public class AlignPoints {
-    float [][] lineA;
+    double [][] lineA;
     public AlignPoints(int n){
-        this.lineA = new float[n*n][2];
+        this.lineA = new double[n*n][2];
     }
     public int calculateLine(int n,int[] x,int[] y){
         int k = 0;
-        float xm,ym;
-        float m;
+        double xm,ym;
+        double m;
         for (int i=0;i<n;i++){
             for(int j = i+1;j<n;j++){
                 if(y[i]==y[j]) {
-                    xm = (float)(x[i] + x[j]) / 2;
+                    xm = (double)(x[i] + x[j]) / 2;
                     this.lineA[k][0] = xm;
                     this.lineA[k][1] = xm;
                 }
                 else {
-                    m = -((float)(x[j] - x[i]) /(y[j] - y[i]));
+                    m = -((double)(x[j] - x[i]) /(y[j] - y[i]));
                     if (m == -0.0)
                         m = 0;
                     this.lineA[k][0] = m;
                    // System.out.println(this.lineA[k][0]);
-                    xm = (float)(x[i] + x[j]) / 2;
-                    ym = (float)(y[i] + y[j]) / 2;
+                    xm = (double)(x[i] + x[j]) / 2;
+                    ym = (double)(y[i] + y[j]) / 2;
                     this.lineA[k][1] = ym - (this.lineA[k][0] * xm);
                 }
                 k++;
@@ -32,18 +32,18 @@ public class AlignPoints {
         return k;
     }
 
-    public float[][] MergeSort(float[][] arr2){
+    public double[][] MergeSort(double[][] arr2){
      //   for(int i=0;i<arr2.length;i++){
        //     System.out.println(arr2[i][0]+"\t"+arr2[i][1]);
        // }
-        float[][] A,B;
+        double[][] A,B;
         int len = arr2.length;
         if(len==1){
             return arr2;
         }
         int middle = (len)/2;
-        A = new float[middle][2];
-        B = new float[len-middle][2];
+        A = new double[middle][2];
+        B = new double[len-middle][2];
         // Create subarray which stores elements from start to middle.
         for (int i=0;i<A.length;i++){
             A[i][0] = arr2[i][0];
@@ -62,7 +62,7 @@ public class AlignPoints {
         return arr2;
     }
 
-    public void merge(float[][] As,float[][] Bs,float[][] arr){
+    public void merge(double[][] As,double[][] Bs,double[][] arr){
         int AsLength = As.length;
         int BsLength = Bs.length;
         int i=0,j=0,k=0;
@@ -107,7 +107,7 @@ public class AlignPoints {
         }
     }
 
-    public float[][] rearrange(float[][] line,int k){
+    public double[][] rearrange(double[][] line,int k){
         for(int i=0;i<k;i++){
             line[i][0] = this.lineA[i][0];
             line[i][1] = this.lineA[i][1];
@@ -116,19 +116,21 @@ public class AlignPoints {
         return line;
     }
 
-    public void findMaxCount(float[][] arr,int k){
+    public void findMaxCount(double[][] arr,int k){
         int count=1,max_count=1;
         if(k>1)
         {
-            for (int i = 0; i < k - 1; i++) {
-                if (arr[i][0] == arr[i + 1][0] && arr[i][1] == arr[i + 1][1])
+            for (int i = 0; i < k-1; i++) {
+                if (arr[i][0]==arr[i+1][0] && arr[i][1]==arr[i+1][1])
                     count++;
-                else if (arr[i][0] != arr[i + 1][0] || arr[i][1] != arr[i + 1][1]) {
-                    if (count > max_count)
+                else if(arr[i][0]!=arr[i+1][0] || arr[i][1]!=arr[i+1][1])
+                    if(count>max_count) {
                         max_count = count;
-                    else
                         count = 1;
-                }
+                      // System.out.println(arr[i][0]+"\t"+arr[i][1]+"\t"+max_count+"\t"+i);
+                    }
+                else
+                    count=1;
             }
         }
         System.out.println(max_count);
@@ -138,7 +140,7 @@ public class AlignPoints {
         int n = sc.nextInt();
         int [] x,y;
         int k;
-        float[][] line;
+        double[][] line;
         x = new int[n];
         y = new int[n];
         AlignPoints ap = new AlignPoints(n);
@@ -149,7 +151,7 @@ public class AlignPoints {
         }
         k = ap.calculateLine(n,x,y);
         //System.out.println(k);
-        line = new float[k][2];
+        line = new double[k][2];
         line = ap.rearrange(line,k);
         // for(int i=0;i<k;i++){
           // System.out.println(line[i][0]+"\t"+line[i][1]);
@@ -157,9 +159,9 @@ public class AlignPoints {
             line = ap.MergeSort(line);
             ap.findMaxCount(line, k);
        //System.out.println(xline.length);
-   for(int i=0;i<k;i++){
-            System.out.println(line[i][0]+"\t"+line[i][1]);
-        }
+  // for(int i=10000;i<20000;i++){
+    //        System.out.println(line[i][0]+"\t"+line[i][1]);
+      //  }
     }
 
 }
