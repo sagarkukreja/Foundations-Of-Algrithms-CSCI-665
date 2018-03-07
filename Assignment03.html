@@ -1,0 +1,224 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>CSCI-665 Foundations of Algorithms</title>
+</head>
+<body>
+
+<p>
+
+<b><font size="+3" color="darkblue">CSCI-665
+Foundations of Algorithms: Homework 3</font></b><br><br>
+
+<a href="https://cs.rit.edu/~grd-665/hw3/CSCI665_HW3_2175.pdf">Click here</a> to get the pdf file 
+with the homework assignment. Please recall the requirements
+and expectations described in Homework 0 and 1.
+<br><br>
+
+<br><br>
+Please note that for this homework and 
+all future homework assignments involving dynamic programming, 
+you should refer to the "heart of the algorithm" when describing 
+the correctness of
+your dynamic programming algorithm.  See the homework writeup
+for details on the three components of this description.
+
+
+<br><br>
+The homework consists of a non-coding part:
+</p><ul>
+<li>Problem 1.
+</li>
+<li>Problem 2: a couple of paragraphs arguing the correctness
+of your algorithm, including an estimate of the running
+time of the algorithm.
+</li>
+<li>Problem 3:  the "heart of the algorithm" plus an estimate of the
+running time of your algorithm.
+</li>
+<li>Problem 4:  the "heart of the algorithm" plus an estimate of the
+running time of your algorithm.
+</li>
+<li>Problem 5:  as described in the writeup, include a
+summary of your findings.  This should include numerical data
+as well as analysis.
+</li>
+</ul>
+and a coding part:
+<ul>
+<li>Implementation for problem 2.
+</li>
+<li>Implementation for problem 3.
+</li>
+<li>Implementation for problem 4.
+</li>
+<li>Implementation for problem 5.
+</li>
+</ul>
+
+<br><br>
+
+
+Here are the input/output specifications:
+
+<br><br>
+<b><font size="+2" color="blue">Problem 2</font></b><br>
+<br>
+Input specification: the first line contains n.
+Following that are n lines of data.  The i-th of these lines contains
+two integers, x<sub>i</sub> and y<sub>i</sub>, 
+separated by a space, representing
+the x and y coordinates of the i-th police car.
+
+You may assume that n is not bigger than 10000 and that all the coordinates
+are integers with absolute value no greater than 10000.
+<br><br>
+Output specification: the output contains one line with the 
+minimum possible sum
+of distances to every police car 
+(notice, you will output the sum of the distances, not the best 
+location for the donut store),
+followed by the end-of-line symbol "\n". 
+
+<br>
+<br>
+To submit your code, use the try system as follows:
+<p>
+<tt>try grd-665 hmwk3-1 Donut.java</tt>
+</p><p>
+or
+</p><p>
+<tt>try grd-665 hmwk3-6 donut.py</tt>
+
+<br>
+<br>
+Sample input: <a href="https://cs.rit.edu/~grd-665/hw3/testdata/input-1.1">input-1.1</a>,
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/input-1.2">input-1.2</a><br>
+Sample output: <a href="https://cs.rit.edu/~grd-665/hw3/testdata/answer-1.1">answer-1.1</a>,
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/answer-1.2">answer-1.2</a><br>
+<br>
+
+
+<br><br>
+<b><font size="+2" color="blue">Problem 3</font></b><br>
+<br>
+Input specification: the first line contains n.
+Following that are n lines of data.
+The i-th of these lines contains three numbers, separated by spaces.
+The three numbers represent the starting time, ending
+time and employer, respectively, for the i-th job.
+
+You may assume that n is no larger than 1000000.
+You may assume that the starting times and ending times are
+all positive integers no greater than 10000.
+You may assume that the employer is an integer with value either
+0 or 1.
+
+<br><br>
+Output specification: the output contains a single line containing a 
+single number: the maximum number of jobs that can be scheduled 
+(according to the constraints of the problem),
+followed by the end-of-line symbol "\n".
+
+<br>
+<br>
+To submit your code, use the try system as follows:
+</p><p>
+<tt>try grd-665 hmwk3-2 Jobs.java</tt>
+</p><p>
+or
+</p><p>
+<tt>try grd-665 hmwk3-7 jobs.py</tt>
+
+<br>
+<br>
+Sample input: <a href="https://cs.rit.edu/~grd-665/hw3/testdata/input-2.1">input-2.1</a>, 
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/input-2.2">input-2.2</a><br>
+Sample output: <a href="https://cs.rit.edu/~grd-665/hw3/testdata/answer-2.1">answer-2.1</a>, 
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/answer-2.2">answer-2.2</a><br>
+
+
+<br><br>
+<b><font size="+2" color="blue">Problem 4</font></b><br>
+<br>
+
+<br>
+Input specification: the first line contains n, 
+W<sub>1</sub>, and W<sub>2</sub>. This is followed by n lines 
+where the i-th line describes the i-th
+item: it contains w<sub>i</sub> and c<sub>i</sub>. 
+You may assume that n, W<sub>1</sub>, and W<sub>2</sub> are not bigger
+than 1,000 and that all the numbers fit in int.
+<br><br>
+Output specification: the output contains one line with 
+the maximum cost of a set of items that fits in the two backpacks,
+followed by the end-of-line symbol "\n". 
+
+<br><br>
+To submit your code, use the try system as follows:
+</p><p>
+<tt>try grd-665 hmwk3-3 DoubleKnapsack.java</tt>
+</p><p>
+or
+</p><p>
+<tt>try grd-665 hmwk3-8 doubleKnapsack.py</tt>
+
+<br>
+<br>
+Sample input: <a href="https://cs.rit.edu/~grd-665/hw3/testdata/input-3.1">input-3.1</a>, 
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/input-3.2">input-3.2</a>,
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/input-3.3">input-3.3</a>,
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/input-3.4">input-3.4</a><br>
+Sample output: <a href="https://cs.rit.edu/~grd-665/hw3/testdata/answer-3.1">answer-3.1</a>, 
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/answer-3.2">answer-3.2</a>,
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/answer-3.3">answer-3.3</a>,
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/answer-3.4">answer-3.4</a><br>
+
+
+<br><br>
+<b><font size="+2" color="blue">Problem 5</font></b><br>
+<br>
+Input specification: the first line contains n and the next 
+line contains a<sub>1</sub>, ...,
+a<sub>n</sub>, separated by spaces. 
+You may assume that all the numbers fit in int.
+<br><br>
+Output specification: the output contains one 
+line with the <i>maximum length</i> of an increasing 
+subsequence of a<sub>1</sub>, ..., a<sub>n</sub>,
+followed by the end-of-line symbol "\n". 
+
+<br><br>
+To submit your code, use the try system as follows:
+</p><p>
+<tt>try grd-665 hmwk3-4 LongestIncreasingSubseqRecursive.java</tt><br>
+<tt>try grd-665 hmwk3-5 LongestIncreasingSubseqDP.java</tt>
+</p><p>
+or
+</p><p>
+<tt>try grd-665 hmwk3-9 longestIncreasingSubseqRecursive.py</tt><br>
+<tt>try grd-665 hmwk3-10 longestIncreasingSubseqDP.py</tt>
+
+<br>
+<br>
+Sample input: <a href="https://cs.rit.edu/~grd-665/hw3/testdata/input-4.1">input-4.1</a>, 
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/input-4.2">input-4.2</a>,
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/input-4.3">input-4.3</a>,
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/input-4.4">input-4.4</a>,
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/input-4.5">input-4.5</a><br>
+Sample output: <a href="https://cs.rit.edu/~grd-665/hw3/testdata/answer-4.1">answer-4.1</a>, 
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/answer-4.2">answer-4.2</a>,
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/answer-4.3">answer-4.3</a>,
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/answer-4.4">answer-4.4</a>,
+<a href="https://cs.rit.edu/~grd-665/hw3/testdata/answer-4.5">answer-4.5</a><br>
+
+<br><br>
+Note: No upper-bound on n is specified. Run both the recursive 
+and the dynamic programming algorithm on a variety of inputs, 
+increasing n.  Provide both numerical results and analysis.
+It is ok if the recursive algorithm successfully runs 
+only on the smaller test cases.
+
+
+
+
+</p></body></html>
